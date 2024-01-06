@@ -1,3 +1,12 @@
+!pip install -q streamlit
+pip install tqdm
+pip install pandas
+pip install numpy
+pip install diffusers
+pip install transformers
+pip install matplotlib
+pip install opencv-python
+pip install torch
 %%writefile app.py
 import streamlit as st
 from pathlib import Path
@@ -64,3 +73,7 @@ def generate_image(prompt, model):
 if __name__ == "__main__":
     main()
 
+
+!npm install localtunnel
+!streamlit run app.py &>/content/logs.txt &
+!npx localtunnel --port 8501 & curl ipv4.icanhazip.com
